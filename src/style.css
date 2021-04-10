@@ -1,1 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.card-title {
+  background: pink;
+  color: rgb(53, 2, 2);
+}
