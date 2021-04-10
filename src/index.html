@@ -19,6 +19,7 @@
       src="https://kit.fontawesome.com/d070f90729.js"
       crossorigin="anonymous"
     ></script>
+    <script defer type="text/js" src="./main.js"></script>
   </head>
   <body>
     <div class="container">
@@ -32,30 +33,32 @@
               Some fields are missing
             </div>
           </div>
-          <form>
+          <form action="/" method="GET">
             <div class="row">
               <div class="form-group col-md-5">
-                <label for="inputEmail4">Card #</label>
+                <label for="">Card #</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
                   id="cardNumber"
                   placeholder="XXXX XXXX XXXX XXXX"
+                  maxlength="16"
                 />
               </div>
               <div class="form-group col-md-3">
-                <label for="inputPassword4">CVC #</label>
+                <label for="">CVC #</label>
                 <input
-                  type="password"
+                  type="text"
                   class="form-control"
                   id="cvc"
                   placeholder="000"
+                  maxlength="3"
                 />
               </div>
               <div class="form-group col-md-4">
-                <label for="inputPassword4">Amount</label>
+                <label for="">Amount</label>
                 <input
-                  type="password"
+                  type="number"
                   class="form-control"
                   id="amount"
                   placeholder="$00000"
@@ -64,21 +67,23 @@
             </div>
             <div class="row">
               <div class="form-group col-md-6">
-                <label for="inputAddress">First Name</label>
+                <label for="">First Name</label>
                 <input
                   type="text"
                   class="form-control"
                   id="name"
                   placeholder=""
+                  required
                 />
               </div>
               <div class="form-group col-md-6">
-                <label for="inputAddress2">Last Name</label>
+                <label for="">Last Name</label>
                 <input
                   type="text"
                   class="form-control"
                   id="last"
                   placeholder=""
+                  required
                 />
               </div>
             </div>
@@ -133,34 +138,29 @@
                 <p class="fs-6">Add any notes here.</p>
               </div>
             </div>
+            <div
+              class="card-footer bg-light border-success d-flex justify-content-end"
+            >
+              <div>
+                <input
+                  type="submit"
+                  class="btn btn-secondary"
+                  data-toggle="button"
+                  value="Cancel"
+                />
+                <input
+                  id="sendButton"
+                  type="submit"
+                  class="btn btn-primary"
+                  data-toggle="button"
+                  value="Send"
+                />
+              </div>
+            </div>
           </form>
-        </div>
-        <div
-          class="card-footer bg-light border-success d-flex justify-content-end"
-        >
-          <div>
-            <button
-              type="cancel"
-              class="btn btn-secondary"
-              data-toggle="button"
-            >
-              Cancel
-            </button>
-            <button
-              id="sendButton"
-              type="submit"
-              class="btn btn-primary"
-              data-toggle="button"
-            >
-              Send
-            </button>
-          </div>
         </div>
       </div>
       <!-- container-->
-
-      <a href="https://www.google.com" id="google">test</a>
-      <input type="checkbox" id="check" />
 
       <!-- Scripts starts -->
       <script
@@ -170,7 +170,6 @@
       ></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <script type="text/js" href="./main.js"></script>
     </div>
   </body>
 </html>
