@@ -6,28 +6,29 @@ window.onload = function() {
   console.log("Hello Rigo from the console!");
 };
 
-const cardNumber = document.getElementById("cardNumber");
-const cvc = document.getElementById("cvc");
+//const cardNumber = document.getElementById("cardNumber");
+//const cvc = document.getElementById("cvc");
 const form = document.getElementById("form");
 const errorElement = document.getElementById("error");
 
 form.addEventListener("submit", e => {
   let messages = [];
-  if (name.value === "" || name.value == null) {
-    messages.push("Name is required");
+  if (amount.value === "" || amount.value == null) {
+    messages.push("Amount must be more than 0");
   }
 
   if (cardNumber.value.length !== 16) {
-    messages.push("Password must be longer than 6 characters");
+    messages.push("Card number must be 16 characters long");
   }
 
   if (cvc.value === "") {
-    messages.push("cvc cannot be null");
+    messages.push("CVC cannot be null");
   }
 
   if (messages.length > 0) {
     e.preventDefault();
     errorElement.innerText = messages.join(", ");
+    errorElement.style = "display: block";
   }
 });
 
