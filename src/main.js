@@ -22,7 +22,7 @@ form.addEventListener("submit", e => {
   }
 
   if (cvc.value === "") {
-    messages.push("CVC cannot be null");
+    messages.push("CVC field cannot be empty");
   }
 
   if (messages.length > 0) {
