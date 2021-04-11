@@ -2,11 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=
-    , initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML5 Form</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -22,7 +18,7 @@
     <script defer type="text/js" src="./main.js"></script>
   </head>
   <body>
-    <form action="/" method="GET">
+    <form id="form" action="/" method="GET">
       <div class="card border-success mb-3" style="max-width: 90%rem;">
         <div class="card-header  bg-light border-success">
           <h3>Payment form example</h3>
@@ -30,11 +26,10 @@
       </div>
       <div class="card-body">
         <div
-          id="err"
           class="card-title rounded-3 border border-danger p-2 fs-8"
-          style="height: 60px"
+          style="height:60px"
         >
-          Some fields are missing
+          <div id="error"></div>
         </div>
 
         <div class="row">

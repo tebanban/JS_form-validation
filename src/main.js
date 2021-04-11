@@ -8,23 +8,48 @@ window.onload = function() {
 
 const cardNumber = document.getElementById("cardNumber");
 const cvc = document.getElementById("cvc");
-const amount = document.getElementById("amount");
+const form = document.getElementById("form");
+const errorElement = document.getElementById("error");
 
-const sendButton = document.getElementById("sendButton");
+form.addEventListener("submit", e => {
+  let messages = [];
+  if (name.value === "" || name.value == null) {
+    messages.push("Name is required");
+  }
 
-sendButton.addEventListener("click", function(e) {
-  let errMessages = [];
-  if (cardNumber.value === " " || cardNumber.value === null) {
-    errMessages.push("Name is equired");
+  if (cardNumber.value.length !== 16) {
+    messages.push("Password must be longer than 6 characters");
   }
-  if (cvc.value === " " || cvc.value === null) {
-    errMessages.push("Last name is required");
+
+  if (cvc.value === "") {
+    messages.push("cvc cannot be null");
   }
-  if (amount.value === " " || amount.value === null) {
-    errMessages.push("Last name is required");
-  }
-  if (errMessages.length > 0) {
+
+  if (messages.length > 0) {
     e.preventDefault();
-    console.log("event default working");
+    errorElement.innerText = messages.join(", ");
   }
 });
+
+// const cardNumber = document.getElementById("cardNumber");
+// const cvc = document.getElementById("cvc");
+// const form = document.getElementById("form");
+// const errElement = document.getElementById("errElement");
+
+// form.addEventListener("submit", e => {
+//   let errMessages = [];
+//   if (cardNumber.value === " " || cardNumber.value === null) {
+//     errMessages.push("Card number is equired");
+//   }
+//   if (cvc.value === " " || cvc.value === null) {
+//     errMessages.push("Cvc is required");
+//   }
+//   if (amount.value === " " || amount.value === null) {
+//     errMessages.push("Amount is required");
+//   }
+//   if (errMessages.length > 0) {
+//     e.preventDefault();
+//     console.log("event default working");
+//     errElement.innerText = "hello";
+//   }
+// });
